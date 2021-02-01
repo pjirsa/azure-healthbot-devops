@@ -1,15 +1,20 @@
-on: [push]
+on: 
+  push:
+    branches: 
+      - main
+
 
 jobs:
-  hello_world_job:
+  get-scenarios:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to get healthbot scenarios
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: pjirsa/hlth-bot-devops@v1.1
+    - name: Get Scenarios action step
+      id: get-scenarios
+      uses: pjirsa/hlth-bot-devops@v2.0
       with:
-        who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+        tenant-name: 'demo'
+        api-key: 'demo'
+    # Use the output from the `get-scenarios` step
+    - name: Get the output
+      run: echo "{{ steps.get-scenarios.outputs.scenarios }}"
