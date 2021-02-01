@@ -13,8 +13,8 @@ jobs:
       id: get-scenarios
       uses: pjirsa/hlth-bot-devops@v2.0
       with:
-        tenant-name: 'demo'
-        api-key: 'demo'
+        tenant-name: ${{ secrets.TENANT_NAME }}
+        api-key: ${{ secrets.API_KEY }}
     # Use the output from the `get-scenarios` step
     - name: Get the output
       run: echo "{{ steps.get-scenarios.outputs.scenarios }}"
