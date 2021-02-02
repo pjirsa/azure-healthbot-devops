@@ -11,13 +11,6 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
-    - name: Read template.json
-      id: template
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: ./template.json
-    - name: Echo template.json
-      run: echo ${{ steps.template.outputs.content }}
     - name: Push Scenarios action step
       id: push-scenarios
       uses: pjirsa/hlth-bot-devops@v1.0
