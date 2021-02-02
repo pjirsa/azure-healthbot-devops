@@ -5,16 +5,14 @@ on:
 
 
 jobs:
-  get-scenarios:
+  push-scenarios:
     runs-on: ubuntu-latest
-    name: A job to get healthbot scenarios
+    name: A job to push healthbot scenarios
     steps:
-    - name: Get Scenarios action step
-      id: get-scenarios
-      uses: pjirsa/hlth-bot-devops@v2.0
+    - name: Push Scenarios action step
+      id: push-scenarios
+      uses: pjirsa/hlth-bot-devops@v1.0
       with:
         tenant-name: ${{ secrets.TENANT_NAME }}
         api-secret: ${{ secrets.API_KEY }}
-    # Use the output from the `get-scenarios` step
-    - name: Get the output
-      run: echo "{{ steps.get-scenarios.outputs.scenarios }}"
+        template-file: '*'
