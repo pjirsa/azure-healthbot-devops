@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Hello World",
+        "id": "13a524d4-6ff0-46a6-a5b5-c2c0d4a98573",
+        "scenario_trigger": "hello_world",
+        "description": "",
+        "active": true,
+        "updated": "2021-02-02T13:50:33.6710000Z",
+        "userDisplayName": "API",
+        "code": "{\"version\":2,\"steps\":[{\"id\":\"aaa3073dc553-32a44525cced8e2f-2200\",\"type\":\"statement\",\"designer\":{\"xLocation\":479,\"yLocation\":196},\"text\":\"Hello World!\"}]}"
+    },
+    {
+        "name": "Greetings",
+        "id": "5fac0162-f217-4abf-90c5-255ab8b78a4c",
+        "scenario_trigger": "greetings",
+        "description": "",
+        "active": true,
+        "updated": "2021-02-02T13:50:33.6730000Z",
+        "userDisplayName": "API",
+        "code": "{\"version\":2,\"steps\":[{\"id\":\"aaa3073dc553-32a44525cced8e2f-2200\",\"type\":\"statement\",\"designer\":{\"xLocation\":479,\"yLocation\":196},\"text\":\"Greetings!\"}]}"
+    }
+]
