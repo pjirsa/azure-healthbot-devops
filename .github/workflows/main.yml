@@ -17,4 +17,4 @@ jobs:
       with:
         tenant-name: ${{ secrets.TENANT_NAME }}
         api-secret: ${{ secrets.API_KEY }}
-        template-file: '$GITHUB_WORKSPACE/template.json'
+        template-file: ${{ github.workspace }} + '/template.json'
