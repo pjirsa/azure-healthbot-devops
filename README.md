@@ -1,3 +1,5 @@
+![build badge](https://github.com/pjirsa/azure-healthbot-devops/workflows/main/badge.svg)
+
 # Azure Healthbot Scenario DevOps
 Sample template repo using custom github action to push scenarios via Scenario Management API
 
