@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "steps": [
+        {
+            "id": "aaa3073dc553-32a44525cced8e2f-2200",
+            "type": "statement",
+            "designer": {
+                "xLocation": 479,
+                "yLocation": 196
+            },
+            "text": "Hello World!"
+        }
+    ]
+}

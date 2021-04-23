@@ -1,19 +1,21 @@
 const jwt = require("jsonwebtoken");
 const rp = require("request-promise");
+const fs = require("fs");
 
 if (process.argv.length !== 5) {
-    console.log("Usage: node healthAgentAPI.js <post_scenarios|get_scenarios> <tenantName> <API_JWT_secret>");
+    console.log("Usage: node healthAgentAPI.js <post_scenarios|get_scenarios|get_localization> <tenantName> <API_JWT_secret>");
     process.exit();
 }
 const action = process.argv[2];
 const tenantName = process.argv[3]
 const jwtSecret = process.argv[4];
 
-const BASE_URL = "https://us.healthbot.microsoft.com/";
+const BASE_URL = "https://eastus.healthbot.microsoft.com/";
 const jwtToken = jwt.sign({
     tenantName: tenantName,
-    iat: Math.floor(Date.now()  / 1000)
+    iat: Math.floor(Date.now()  / 1000) - 10
   }, jwtSecret);
+
 
 if (action === "post_scenarios") {
     const options = {
@@ -59,9 +61,38 @@ if (action === "get_scenarios") {
 
     rp(options)
         .then(function (parsedBody) {
+            var result = JSON.parse(parsedBody);
+
+            fs.writeFileSync("template.json", JSON.stringify(result, null, 4));
+
+            result.forEach(function(scenario) {                
+                fs.writeFileSync(`scenarios/${scenario.scenario_trigger}.json`, JSON.stringify(JSON.parse(scenario.code), null, 4));
+                console.log(scenario.code);
+            }); 
+
             console.log(parsedBody);
         })
         .catch(function (err) {
+            console.log(jwtToken);
+            console.log(err.message);
+        });
+}
+
+if (action === "get_localization") {
+    const options = {
+        method: 'GET',
+        uri: `${BASE_URL}api/account/${tenantName}/localization`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        }
+    };
+
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(jwtToken);
             console.log(err.message);
         });
 }
