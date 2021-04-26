@@ -1,3 +1,5 @@
+// Forked from https://github.com/microsoft/HealthBotCodeSnippets
+
 const jwt = require("jsonwebtoken");
 const rp = require("request-promise");
 const fs = require("fs");
@@ -16,6 +18,7 @@ const jwtToken = jwt.sign({
     iat: Math.floor(Date.now()  / 1000) - 10
   }, jwtSecret);
 
+console.log(jwtToken);
 
 if (action === "post_scenarios") {
     const options = {
@@ -65,12 +68,10 @@ if (action === "get_scenarios") {
 
             fs.writeFileSync("template.json", JSON.stringify(result, null, 4));
 
-            result.forEach(function(scenario) {                
-                fs.writeFileSync(`scenarios/${scenario.scenario_trigger}.json`, JSON.stringify(JSON.parse(scenario.code), null, 4));
-                console.log(scenario.code);
+            result.forEach(function(scenario) { 
+                scenario.code = JSON.parse(scenario.code);               
+                fs.writeFileSync(`scenarios/${scenario.scenario_trigger}.json`, JSON.stringify(scenario, null, 4));                
             }); 
-
-            console.log(parsedBody);
         })
         .catch(function (err) {
             console.log(jwtToken);
