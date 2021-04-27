@@ -15,8 +15,8 @@
         "scenario_trigger": "hello_world",
         "description": "",
         "active": true,
-        "updated": "2021-04-22T18:48:20.6320000Z",
-        "userDisplayName": "API",
-        "code": "{\"version\":2,\"steps\":[{\"id\":\"aaa3073dc553-32a44525cced8e2f-2200\",\"type\":\"statement\",\"designer\":{\"xLocation\":479,\"yLocation\":196},\"text\":\"Hello World!\"}]}"
+        "updated": "2021-04-23T18:01:35.9220000Z",
+        "userDisplayName": "Phil Jirsa",
+        "code": "{\"version\":2,\"steps\":[{\"id\":\"aaa3073dc553-32a44525cced8e2f-2200\",\"type\":\"statement\",\"designer\":{\"xLocation\":560,\"yLocation\":166},\"text\":\"Hello Azure Healthbot World!\",\"stringId\":\"stringId_afa5d51dede55dd4\"}]}"
     }
 ]

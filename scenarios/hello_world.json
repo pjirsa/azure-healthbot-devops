@@ -1,14 +1,10 @@
 {
-    "version": 2,
-    "steps": [
-        {
-            "id": "aaa3073dc553-32a44525cced8e2f-2200",
-            "type": "statement",
-            "designer": {
-                "xLocation": 479,
-                "yLocation": 196
-            },
-            "text": "Hello World!"
-        }
-    ]
+    "name": "Hello World",
+    "id": "45925b05-8585-4267-8c59-a3beae9509e9",
+    "scenario_trigger": "hello_world",
+    "description": "",
+    "active": true,
+    "updated": "2021-04-23T18:01:35.9220000Z",
+    "userDisplayName": "Phil Jirsa",
+    "code": "{\"version\":2,\"steps\":[{\"id\":\"aaa3073dc553-32a44525cced8e2f-2200\",\"type\":\"statement\",\"designer\":{\"xLocation\":560,\"yLocation\":166},\"text\":\"Hello Azure Healthbot World!\",\"stringId\":\"stringId_afa5d51dede55dd4\"}]}"
 }

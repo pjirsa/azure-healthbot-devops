@@ -13,6 +13,16 @@
             ],
             "program": "${workspaceFolder}\\src\\healthAgentAPI.js",
             "args": ["get_scenarios", "scriptbot-boc8x0g", "cdef6614e3c2da88dd05224830960edfa93068e80e441d948acf7d166cc368e1"]
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Launch Format",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\src\\format.js",
+            "args": ["prep-import", "scenarios"]
         }
     ]
 }
